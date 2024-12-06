@@ -1,22 +1,125 @@
 ### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# Template for AL projects for Dynamics 365 Business Central
+# launch.json folder
 .vscode/
-#Cache folder
+# Cache folder
 .alcache/
-#Symbols folder
+# Symbols folder
 .alpackages/
-#Snapshots folder
+# Snapshots folder
 .snapshots/
-#Testing Output folder
+# Testing Output folder
 .output/
-#Extension App-file
+# Extension App-file
 *.app
-#Rapid Application Development File
+# Rapid Application Development File
 rad.json
-#Translation Base-file
+# Translation Base-file
 *.g.xlf
-#License-file
+# License-file
 *.flf
-#Test results file
+# Test results file
 TestResults.xml
+
+### General ###
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vcxproj.user
+*.pdb
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Log files
+*.log
+
+# Build output
+bin/
+obj/
+debug/
+release/
+.vs/
+
+# IDE-specific files
+*.ide
+
+### .NET ###
+# Environment and secret files
+*.env
+*.env.*
+secrets.json
+
+# Configuration files
+appsettings.Development.json
+appsettings.Production.json
+
+# Backup files
+*.bak
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+*.publishsettings
+
+### Visual Studio ###
+# User-specific files
+*.vscode/
+.vscode/
+.vsidx
+
+# Visual Studio Code workspace settings
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Rider IDE
+.idea/
+.idea/*
+
+### WPF ###
+# Auto-generated files
+Generated_Code/
+
+### ASP.NET Core ###
+# Publish output
+wwwroot/
+node_modules/
+dist/
+**/bin/
+**/obj/
+**/node_modules/
+**/wwwroot/
+wwwroot/
+
+### Console Applications ###
+# Local databases
+*.mdf
+*.ldf
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# Debugging files
+*.dbg
+
+# Others ###
+# Crash reports
+*.crash
+*.stackdump
+*.dmp
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+desktop.ini
+

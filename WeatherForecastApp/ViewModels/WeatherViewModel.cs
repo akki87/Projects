@@ -35,18 +35,22 @@ public class WeatherViewModel : INotifyPropertyChanged
         get => _weatherData;
         set
         {
-            _weatherData = value;
-            OnPropertyChanged(nameof(WeatherData));
-            OnPropertyChanged(nameof(Day));
-            OnPropertyChanged(nameof(Date));
-            OnPropertyChanged(nameof(Location));
-            OnPropertyChanged(nameof(Temps));
-            OnPropertyChanged(nameof(Description));
-            OnPropertyChanged(nameof(Humidity));
-            OnPropertyChanged(nameof(Wind));
-            OnPropertyChanged(nameof(Others));
-            OnPropertyChanged(nameof(Temperature));
-            OnPropertyChanged(nameof(FeelsLike));
+            if (_weatherData != value)
+            {
+                _weatherData = value;
+                OnPropertyChanged(nameof(WeatherData));
+                OnPropertyChanged(nameof(Day));
+                OnPropertyChanged(nameof(Date));
+                OnPropertyChanged(nameof(Location));
+                OnPropertyChanged(nameof(Temps));
+                OnPropertyChanged(nameof(Description));
+                OnPropertyChanged(nameof(Humidity));
+                OnPropertyChanged(nameof(Wind));
+                OnPropertyChanged(nameof(Others));
+                OnPropertyChanged(nameof(Temperature));
+                OnPropertyChanged(nameof(FeelsLike));
+                OnPropertyChanged(nameof(WeatherBackground)); // Notify change for WeatherBackground
+            }
         }
     }
     #endregion
@@ -68,13 +72,15 @@ public class WeatherViewModel : INotifyPropertyChanged
 
     public string Humidity => _weatherData != null ? $"{_weatherData.main.humidity}%" : "0%";
 
-    public string Wind => _weatherData != null ? $"{_weatherData.wind.speed:F1} km/h" : "0km/h";
+    public string Wind => _weatherData != null ? $"{_weatherData.wind.speed:F1} km/h" : "0 km/h";
 
     public string Others => _weatherData != null
         ? $"Sunrise: {DateHelper.FormatTime(_weatherData.sys.sunrise)}\nSunset: {DateHelper.FormatTime(_weatherData.sys.sunset)}"
         : "Sunrise: ---\nSunset: ---";
 
     public string WeatherBackground => WeatherConditionHelper.GetWeatherBackgroundImage(_weatherData);
+
+    public string TestField => _weatherData != null ? _weatherData.weather[0].main.ToLower() : "empty";
     #endregion
 
     #region public methods
