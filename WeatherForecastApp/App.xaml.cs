@@ -12,13 +12,6 @@ namespace WeatherForecastApp
     /// </summary>
     public partial class App : Application
     {
-        [STAThread]  // Single Threaded Apartment model for WPF applications
-        public static void Main()
-        {
-            // Application logic for starting up
-            var app = new App();
-            var mainWindow = new MainWindow();
-            app.Run(mainWindow);
-        }
+        
     }
 }
