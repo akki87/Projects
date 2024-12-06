@@ -12,9 +12,13 @@ namespace WeatherForecastApp
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        [STAThread]  // Single Threaded Apartment model for WPF applications
+        public static void Main()
         {
-            base.OnStartup(e);            
+            // Application logic for starting up
+            var app = new App();
+            var mainWindow = new MainWindow();
+            app.Run(mainWindow);
         }
     }
 }
