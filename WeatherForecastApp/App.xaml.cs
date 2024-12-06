@@ -1,6 +1,9 @@
 ﻿using DotNetEnv;
 using System;
+using System.IO;
 using System.Windows;
+using WeatherForecastApp.Properties;
+using WeatherForecastApp.Service;
 
 namespace WeatherForecastApp
 {
@@ -11,10 +14,7 @@ namespace WeatherForecastApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            Env.Load("E:\\Projects\\WeatherForecastApp\\.env");
-            string apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY");
-            string apiUrl = Environment.GetEnvironmentVariable("WEATHER_API_URL");
+            base.OnStartup(e);            
         }
     }
 }

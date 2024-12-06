@@ -29,7 +29,8 @@ namespace WeatherForecastApp.Helper
                 "clouds" => $"Images/cloud{timeSuffix}.jpeg",
                 "rain" => $"Images/rain{timeSuffix}.jpeg",
                 "snow" => $"Images/snow{timeSuffix}.jpeg",
-                "haze" => $"Images/haze{timeSuffix}.jpeg",
+                "haze"  => $"Images/haze{timeSuffix}.jpeg",
+                "mist" => $"Images/snow{timeSuffix}.jpeg",
                 "thunderstorm" => $"Images/thunderstorm{timeSuffix}.jpeg",
                 _ => $"Images/Weather/default.jpeg", // Fallback image for unknown conditions
             };
