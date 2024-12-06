@@ -40,6 +40,7 @@
     <None Update=".env">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="settings.json" />
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
@@ -363,6 +364,7 @@
     <Compile Include="Models\WeatherData.cs" />
     <Compile Include="Models\WeatherResponse.cs" />
     <Compile Include="Models\Wind.cs" />
+    <Compile Include="Service\ConfigureService.cs" />
     <Compile Include="Service\GetLocationService.cs" />
     <Compile Include="Service\WeatherService.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />

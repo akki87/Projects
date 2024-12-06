@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WeatherForecastApp.Models;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using DotNetEnv;
 
 namespace WeatherForecastApp.Service
 {
@@ -15,8 +16,12 @@ namespace WeatherForecastApp.Service
 
         public WeatherService()
         {
-            _apiKey = Environment.GetEnvironmentVariable("WEATHER_API_KEY") ?? throw new InvalidOperationException("API Key not found.");
-            _baseUrl = Environment.GetEnvironmentVariable("WEATHER_API_URL") ?? "https://api.openweathermap.org/data/2.5/weather";
+            var settings = ConfigureService.GetSettings<Settings>("WeatherForecastApp.settings.json");
+            if (settings != null)
+            {
+                _apiKey = settings.WeatherApiKey;
+                _baseUrl = settings.WeatherApiUrl;
+            }
         }
 
         public async Task<WeatherResponse> GetWeatherAsync(double latitude, double longitude)
@@ -33,4 +38,10 @@ namespace WeatherForecastApp.Service
             return JsonConvert.DeserializeObject<WeatherResponse>(json);
         }
     }
+    public class Settings
+    {
+        public string WeatherApiKey { get; set; }
+        public string WeatherApiUrl { get; set; }
+    }
+
 }
