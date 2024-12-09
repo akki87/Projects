@@ -1,9 +1,4 @@
-﻿using DotNetEnv;
-using System;
-using System.IO;
-using System.Windows;
-using WeatherForecastApp.Properties;
-using WeatherForecastApp.Service;
+﻿using System.Windows;
 
 namespace WeatherForecastApp
 {

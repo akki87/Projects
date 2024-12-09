@@ -3,9 +3,6 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using WeatherForecastApp.Models;
-using Microsoft.Extensions.Configuration;
-using System.Configuration;
-using DotNetEnv;
 
 namespace WeatherForecastApp.Service
 {
